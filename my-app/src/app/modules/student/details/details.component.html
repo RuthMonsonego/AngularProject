@@ -1,0 +1,31 @@
+<div class="card student-details-card">
+  <div class="card-header">
+    <h5>Student Details: {{student.firstName}} {{student.lastName}}</h5>
+  </div>
+  <div class="card-body">
+    <div class="student-detail">
+      <strong>Last Name:</strong> {{student.lastName}}
+    </div>
+    <div class="student-detail">
+      <strong>First Name:</strong> {{student.firstName}}
+    </div>
+    <div class="student-detail">
+      <strong>Address:</strong> {{student.address}}
+    </div>
+    <div class="student-detail">
+      <strong>Phone:</strong> {{student.phone}}
+    </div>
+    <div class="student-detail">
+      <strong>Active:</strong> {{student.isActive ? 'Yes' : 'No'}}
+    </div>
+    <div class="student-detail">
+      <strong>Average:</strong> {{student.avg}}
+    </div>
+    <div class="student-detail">
+      <strong>School Year:</strong> {{student.schoolYear}}
+    </div>
+    <div class="student-detail">
+      <strong>Academic Status:</strong> {{student.academicStatus}}
+    </div>
+  </div>
+</div>

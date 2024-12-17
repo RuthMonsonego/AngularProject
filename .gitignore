@@ -1,0 +1,16 @@
+# Ignore node_modules (Angular)
+node_modules/
+
+# Ignore bin and obj folders (.NET)
+bin/
+obj/
+
+# Ignore temporary files
+*.log
+*.tmp
+
+# Ignore build output
+dist/
+
+# Ignore environment files
+*.env

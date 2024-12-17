@@ -1,0 +1,52 @@
+.site-header {
+    padding: 20px;
+    border-bottom: 2px solid #ffff;
+    text-align: center;
+    background-color: transparent;
+  }
+  
+  .site-title {
+    font-size: 36px;
+    color: #ffc107;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+  
+  .site-nav {
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  .site-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .site-nav ul li {
+    display: inline-block;
+    margin-right: 30px; /* רווח גדול יותר בין הפריטים */
+  }
+  
+  .site-nav ul li:last-child {
+    margin-right: 0;
+  }
+  
+  .site-nav ul li a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px; /* הוספת ריווח פנימי לקישורים */
+  }
+  
+  .site-nav ul li a i {
+    margin-right: 10px; /* רווח קטן יותר בין האיקון לטקסט */
+  }
+  
+  .site-nav ul li a:hover {
+    color: #87CEEB;
+    transition: color 0.3s ease;
+  }
+  

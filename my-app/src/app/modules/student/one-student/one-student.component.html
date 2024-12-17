@@ -1,0 +1,96 @@
+<div class="card">
+  <div>
+    <form [formGroup]="stdForm">
+      <div class="form-group">
+        <label for="lastName">last name:</label>
+        <input type="text" class="form-control" id="lastName" (focus)="inputFocus()" formControlName="lastName">
+        <ng-container *ngIf="stdForm.controls['lastName'].errors && stdForm.controls['lastName'].touched">
+          <div class="alert alert-danger" *ngIf="stdForm.controls['lastName'].errors['required']">This field is required
+          </div>
+          <div class="alert alert-danger" *ngIf="stdForm.controls['lastName'].errors['minlength']">This field must be at
+            least 3 chars</div>
+        </ng-container>
+      </div>
+      <div class="form-group">
+        <label for="firstName">first name:</label>
+        <input type="text" class="form-control" id="firstName" (focus)="inputFocus()" formControlName="firstName">
+        <ng-container *ngIf="stdForm.controls['firstName'].errors && stdForm.controls['firstName'].touched">
+          <div class="alert alert-danger" *ngIf="stdForm.controls['firstName'].errors['required']">This field is
+            required</div>
+          <div class="alert alert-danger" *ngIf="stdForm.controls['firstName'].errors['minlength']">This field must be
+            at least 3 chars</div>
+        </ng-container>
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" class="form-control" id="address" (focus)="inputFocus()" formControlName="address">
+        <ng-container *ngIf="stdForm.controls['address'].errors && stdForm.controls['address'].touched">
+          <div class="alert alert-danger" *ngIf="stdForm.controls['address'].errors['required']">This field is required
+          </div>
+        </ng-container>
+      </div>
+      <div class="form-group">
+        <label for="phone">phone:</label>
+        <input type="text" class="form-control" id="phone" (focus)="inputFocus()" formControlName="phone">
+        <ng-container *ngIf="stdForm.controls['phone'].errors && stdForm.controls['phone'].touched">
+          <div class="alert alert-danger" *ngIf="stdForm.controls['phone'].errors['required']">This field is required
+          </div>
+          <div class="alert alert-danger" *ngIf="stdForm.controls['phone'].errors['pattern']">This field must contain
+            only numbers</div>
+          <div class="alert alert-danger" *ngIf="stdForm.controls['phone'].errors['minlength']">This field must be at
+            least 9 chars</div>
+        </ng-container>
+      </div>
+      <div>
+        <label for="avg">avg:</label>
+        <input type="text" class="form-control" id="avg" (focus)="inputFocus()" formControlName="avg">
+        <ng-container *ngIf="stdForm.controls['avg'].errors && stdForm.controls['avg'].touched">
+          <div class="alert alert-danger" *ngIf="stdForm.controls['avg'].errors['required']">This field is required
+          </div>
+        </ng-container>
+      </div>
+      <div class="form-group">
+        <label for="schoolYear">schoolYear:</label>
+        <br>
+        <input type="radio" value="a" name="schoolYear" formControlName="schoolYear" />a
+        <br>
+        <input type="radio" value="b" name="schoolYear" formControlName="schoolYear" />b
+        <br>
+        <input type="radio" value="c" name="schoolYear" formControlName="schoolYear" />c
+      </div>
+      <div [ngSwitch]="stdForm.controls['schoolYear'].value">
+        <div *ngSwitchCase="'a'" style="color: rgb(132, 255, 0);">you have in this year 365 days to learn</div>
+        <div *ngSwitchCase="'b'" style="color: rgb(132, 255, 0);">you have in this year 365 days to learn</div>
+        <div *ngSwitchCase="'c'" style="color: rgb(132, 255, 0);">you have in this year 364 days to learn</div>
+        <div *ngSwitchDefault>good luck</div>
+      </div>
+      <div class="form-group">
+        <label for="academicStatus">academicStatus:</label>
+        <select class="form-control" formControlName="academicStatus">
+          <option [value]="academicStatus.FullTime">Engineers</option>
+          <option [value]="academicStatus.OnLeave">Architecture</option>
+          <option [value]="academicStatus.PartTime">Mathematics</option>
+        </select>
+      </div>
+
+      <button type="button" class="btn btn-light" (click)="savestd()">save student</button>
+
+    </form>
+    <div class="mt-3">
+      <!-- <h5 *ngIf="student.firstName!==''">total absence days:{{ calk(student.id)}} </h5> -->
+
+      <h5 *ngIf="student.firstName!==''">total absence days:{{sum}} </h5>
+      <div class="form-group">
+        <label for="missingFromDate">Missing From Date:</label>
+        <input type="date" class="form-control" id="missingFromDate" [(ngModel)]="missingFromDate"
+          name="missingFromDate">
+      </div>
+      <div class="form-group">
+        <label for="missingFromDays">Missing From Days:</label>
+        <input type="number" class="form-control" id="missingFromDays" [(ngModel)]="missingFromDays"
+          name="missingFromDays">
+      </div>
+    </div>
+  </div>
+
+</div>

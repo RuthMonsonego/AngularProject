@@ -1,0 +1,32 @@
+.student-details-card {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    max-width: 600px;
+  
+    .card-header {
+      background-color:  #ffc107;
+      color: #fff;
+      padding: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      text-align: center;
+    }
+  
+    .card-body {
+      padding: 15px;
+  
+      .student-detail {
+        margin-bottom: 10px;
+        font-size: 1em;
+  
+        strong {
+          color: #333;
+        }
+      }
+    }
+  }
+  

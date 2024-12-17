@@ -1,0 +1,21 @@
+<div class="content">
+<p>name: {{x}}</p>
+<p>name from map: {{x1}}</p>
+<p>the hour now: {{y}}</p>
+<p>the hour now by operator: {{y1}}</p>
+
+<button (click)="sendMail()" >sent to all students mail</button>
+<button (click)="sendMailS()" >sent to all students mail short</button>
+<ng-container *ngIf="z.length > 0">
+    <li *ngFor="let z1 of z">
+    <p> {{ z1 }}</p>
+    <br>
+    </li>
+  </ng-container>
+<ng-container *ngIf="z1.length > 0">
+    <li *ngFor="let z11 of z1">
+    <p> {{ z11 }}</p>
+    <br>
+    </li>
+  </ng-container>
+</div>

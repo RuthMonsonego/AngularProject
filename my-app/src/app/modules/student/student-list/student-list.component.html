@@ -1,0 +1,28 @@
+<div class="student-list">
+  <h4>All Students</h4>
+  <div class="search-bar">
+    <label>
+      <input type="checkbox" [(ngModel)]="showActiveOnly" /> Show Active Only
+    </label>
+    <input type="search" #sch (input)="filterBySearch(sch.value)" placeholder="Search students..." />
+  </div>
+  <ul>
+    <ng-container *ngFor="let student of students">
+      <li *ngIf="!showActiveOnly || student.isActive" class="list-group-item">
+        <div class="student-details">
+          <div class="student-info">
+            <span>{{student.firstName}} {{student.lastName}}</span>
+            <br>
+            <span>Absenteeism Days: {{calk(student.id)}}</span>
+          </div>
+          <div class="student-actions">
+            <button class="btn btn-primary" (click)="showPanel(student)">Details</button>
+            <button class="btn btn-warning" (click)="edding(student)">Edit</button>
+            <button class="btn btn-danger" (click)="delitestudent(student.id)">Delete</button>
+          </div>
+        </div>
+      </li>
+    </ng-container>
+  </ul>
+  <app-details *ngIf="statusdetails" [student]="toSendStd"></app-details>
+</div>
